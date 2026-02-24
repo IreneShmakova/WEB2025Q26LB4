@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="app">
+        <!-- Шапка -->
         <div class="header">
-            <h1>Погода</h1>
-            <button class="refresh-btn" id="refreshBtn">⟳</button>
+            <h2>Погода</h2>
+            <button class="refresh" id="refreshBtn">↻</button>
         </div>
 
-        <div id="weatherContent"></div>
+        <div class="cities" id="citiesList"></div>
+        
+        <button class="add-btn" id="addCityBtn">+ Добавить город</button>
 
-        <!-- модальное для ввода города -->
+        <div id="weatherBlock"></div>
+
         <div class="modal hidden" id="cityModal">
             <div class="modal-content">
-                <h3>Добавить город</h3>
-                <p>Разрешите геолокацию или введите город вручную</p>
-                <input type="text" id="cityInput" placeholder="Например: Москва">
-                <div class="modal-buttons">
-                    <button class="btn" id="submitCity">OK</button>
-                    <button class="btn btn-secondary" id="cancelModal">Отмена</button>
+                <h3>Новый город</h3>
+                <input type="text" id="cityInput" placeholder="Введите город">
+                <div class="suggestions hidden" id="suggestions"></div>
+                <div class="error hidden" id="cityError"></div>
+                <div class="modal-btns">
+                    <button class="btn" id="submitCity">Добавить</button>
+                    <button class="btn cancel" id="cancelModal">Отмена</button>
                 </div>
             </div>
         </div>
