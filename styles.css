@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #e0f2fe;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #0369a1;
+}
+
+.refresh-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px #0000001a;
+}
+
+.refresh-btn:hover {
+    background: #f0f9ff;
+}
+
+/* Карточка погоды */
+.weather-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.location {
+    font-size: 20px;
+    color: #0284c7;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.temp-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.temp-main {
+    font-size: 64px;
+    font-weight: 300;
+}
+
+.temp-desc {
+    color: #0369a1;
+}
+
+.details {
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+/* прогноз на 3 дня */
+.forecast {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.forecast h3 {
+    color: #0284c7;
+    margin-bottom: 15px;
+}
+
+.forecast-days {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.day-card {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background: #f0f9ff;
+    border-radius: 12px;
+}
+
+.day-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.day-icon {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.day-temp {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: #0369a1;
+}
+
+.modal-content p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #0284c7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* загрузка и ошибки */
+.loading, .error {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    color: #64748b;
+}
+
+.error {
+    color: #dc2626;
+}
+
+/* для телефонов */
+@media (max-width: 400px) {
+    .forecast-days {
+        flex-direction: column;
+    }
+    
+    .temp-block {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}

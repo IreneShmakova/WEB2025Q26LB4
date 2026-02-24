@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Погода</h1>
+            <button class="refresh-btn" id="refreshBtn">⟳</button>
+        </div>
+
+        <div id="weatherContent"></div>
+
+        <!-- модальное для ввода города -->
+        <div class="modal hidden" id="cityModal">
+            <div class="modal-content">
+                <h3>Добавить город</h3>
+                <p>Разрешите геолокацию или введите город вручную</p>
+                <input type="text" id="cityInput" placeholder="Например: Москва">
+                <div class="modal-buttons">
+                    <button class="btn" id="submitCity">OK</button>
+                    <button class="btn btn-secondary" id="cancelModal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
